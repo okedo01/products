@@ -1,7 +1,12 @@
 import React from 'react'
 
-export default function FoodItems() {
+export default function FoodItems({product}) {
   return (
-    <div>FoodItems</div>
+    <div>
+      <h2>{product.name}</h2>
+          <h3>{product.category}</h3>
+          <p>${product.price}</p>
+          <img src={product.image.thumbnail} />
+    </div>
   )
 }
