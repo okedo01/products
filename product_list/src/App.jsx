@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import FoodList from './components/FoodList';
+import Desserts from './components/Desserts';
+import Total from './components/Total';
 
 export default function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("/data.json")
       .then(res => res.json())
-      // .then(data => console.log(data))
       .then(data => setProducts(data))
       .catch(err => console.log(err))
   }, [])
   return (
-    <div>
-      <h1>Food Products</h1>
+    <div className='flex p-0 m-0'>
       <FoodList products={products}/>
+      <Total />
     </div>
   )
 }
