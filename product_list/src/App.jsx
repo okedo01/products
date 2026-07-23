@@ -12,9 +12,13 @@ export default function App() {
       .catch(err => console.log(err))
   }, [])
   return (
-    <div className='flex p-0 m-0'>
-      <FoodList products={products}/>
-      <Total />
+    <div className='grid grid-cols-4 gap-x-9 p-0 m-0'>
+      <div className="col-span-3">
+        <FoodList products={products}/>
+      </div>
+      <div className="col-span-1">
+        <Total />
+      </div>
     </div>
   )
 }
