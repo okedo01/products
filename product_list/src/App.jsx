@@ -12,7 +12,7 @@ export default function App() {
       .catch(err => console.log(err))
   }, [])
   return (
-    <div className='grid grid-cols-4 gap-x-9 p-0 m-0'>
+    <div className='grid grid-cols-4 gap-x-9 p-0 m-0 bg-gray-300'>
       <div className="col-span-3">
         <FoodList products={products}/>
       </div>
