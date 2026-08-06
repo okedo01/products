@@ -1,12 +1,15 @@
 import React from 'react'
+import ProductCard from './ProductCard'
 
-export default function ProductList({product}) {
+export default function ProductList({products}) {
   return (
     <div>
         {
-            product.map((items) => (
-                console.log(items)
-                
+            products.map((product) => (
+                <ProductCard 
+                key={product.name}
+                product={product}
+                />
             ))
         }
     </div>
