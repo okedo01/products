@@ -31,7 +31,7 @@ export default function FoodItems({ product }) {
       </div>
       <span>{product.category}</span>
       <h3>{product.name}</h3>
-      <p>${product.price}</p>
+      <p>${product.price.toFixed(2)}</p>
     </div>
   )
 }
