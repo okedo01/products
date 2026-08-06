@@ -3,7 +3,7 @@ import ProductCard from './ProductCard'
 
 export default function ProductList({products}) {
   return (
-    <div>
+    <div className='product-list'>
         {
             products.map((product) => (
                 <ProductCard 

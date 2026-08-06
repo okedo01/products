@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function ProductCard({product}) {
   return (
-    <div className=''>
-        <img src={product.image.desktop} />
-        <h2>{product.name}</h2>
+    <div className='product-card relative'>
+        <img src={product.image.desktop} alt={product.name} />
         <p>{product.category}</p>
+        <h2>{product.name}</h2>
         <p>${product.price.toFixed(2)}</p>
-        <button>Add to Cart</button>
+        <button className='absolute bottom-20 left-16 text-sm text-gray-200 bold bg-red-500'>Add to Cart</button>
     </div>
   )
 }
