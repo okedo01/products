@@ -40,7 +40,24 @@ export default function App() {
   }
 
   const decreaseQuantity = (product) => {
-    console.log("decreaseds")
+    const clickedItem = cart.find(item => item.product.name === product.name)
+    
+    if(clickedItem.quantity > 1) {
+      const updatedCart = cart.map(item => 
+        item.product.name === product.name ? 
+        {...item, quantity: item.quantity - 1} :
+        item
+      )
+      setCart(updatedCart);
+    } else {
+      if(clickedItem.quantity === 1) {
+        const filteredItem = cart.filter(item => 
+          item.product.name !== product.name
+        )
+        setCart(filteredItem);
+      }
+      
+    }
   }
 
   return (
