@@ -5,17 +5,17 @@ export default function App() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("/data.json")
-    .then((resources) => resources.json())
-    .then((data) => setProducts(data))
-    .catch((error) => console.log("system error"))
+      .then((resources) => resources.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.log("system error"))
   }, [])
 
   const addToCart = (product) => {
     const clickedItem = cart.find(item => item.product.name === product.name);
-    if(clickedItem) {
-      const updatedItem = cart.map(item => 
+    if (clickedItem) {
+      const updatedItem = cart.map(item =>
         item.product.name === product.name ? {
           ...item, quantity: item.quantity + 1
         } : item
@@ -31,12 +31,21 @@ export default function App() {
   }
 
   const increaseQuantity = (product) => {
-    console.log("increased");
+    const updatedCart = cart.map(item =>
+      item.product.name === product.name ?
+        { ...item, quantity: item.quantity + 1 } :
+        item
+    )
+    setCart(updatedCart);
+  }
+
+  const decreaseQuantity = (product) => {
+    console.log("decreaseds")
   }
 
   return (
     <div className='wrapper'>
-      <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} />
+      <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
     </div>
   )
 }

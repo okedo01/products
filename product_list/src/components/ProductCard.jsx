@@ -1,7 +1,7 @@
 import React from 'react'
 import cartIcon from "../design/icon-add-to-cart.svg"
 
-export default function ProductCard({ product, addToCart, cart, increaseQuantity }) {
+export default function ProductCard({ product, addToCart, cart, increaseQuantity, decreaseQuantity }) {
     const clickedItem = cart.find(item => item.product.name === product.name);
 
     return (
@@ -13,8 +13,8 @@ export default function ProductCard({ product, addToCart, cart, increaseQuantity
             <div >
                 {clickedItem ? (
                     <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border rounded-full px-5 py-2">
-                        <button>-</button>
-                        <span>(1)</span>
+                        <button onClick={() => decreaseQuantity}>-</button>
+                        <span>({clickedItem.quantity})</span>
                         <button onClick={() => increaseQuantity(product)}>+</button>
                     </div>
                 ) : (
