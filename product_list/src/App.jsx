@@ -28,12 +28,15 @@ export default function App() {
         }
       ])
     }
-    
+  }
+
+  const increaseQuantity = (product) => {
+    console.log("increased");
   }
 
   return (
     <div className='wrapper'>
-      <ProductList products={products} addToCart={addToCart} cart={cart} />
+      <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} />
     </div>
   )
 }

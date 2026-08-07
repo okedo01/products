@@ -1,9 +1,8 @@
 import React from 'react'
 import cartIcon from "../design/icon-add-to-cart.svg"
 
-export default function ProductCard({ product, addToCart, cart }) {
+export default function ProductCard({ product, addToCart, cart, increaseQuantity }) {
     const clickedItem = cart.find(item => item.product.name === product.name);
-    console.log(clickedItem);
 
     return (
         <div className='product-card relative'>
@@ -16,7 +15,7 @@ export default function ProductCard({ product, addToCart, cart }) {
                     <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border rounded-full px-5 py-2">
                         <button>-</button>
                         <span>(1)</span>
-                        <button>+</button>
+                        <button onClick={() => increaseQuantity(product)}>+</button>
                     </div>
                 ) : (
                     <button onClick={() => addToCart(product)} className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border rounded-full px-5 py-2">

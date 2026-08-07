@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-export default function ProductList({products, addToCart, cart}) {
+export default function ProductList({products, addToCart, cart, increaseQuantity}) {
   return (
     <div className='product-list'>
         {
@@ -11,6 +11,7 @@ export default function ProductList({products, addToCart, cart}) {
                 product={product}
                 addToCart={addToCart}
                 cart={cart}
+                increaseQuantity={increaseQuantity}
                 />
             ))
         }
