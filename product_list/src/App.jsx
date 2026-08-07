@@ -1,5 +1,4 @@
 import ProductList from './components/ProductList';
-import Cart from './components/Cart';
 import { useEffect, useState } from 'react';
 
 export default function App() {
@@ -31,14 +30,10 @@ export default function App() {
     }
     
   }
-  useEffect(() => {
-  console.log(cart);
-}, [cart]);
 
   return (
     <div className='wrapper'>
-      <ProductList products={products} addToCart={addToCart} />
-      <Cart />
+      <ProductList products={products} addToCart={addToCart} cart={cart} />
     </div>
   )
 }

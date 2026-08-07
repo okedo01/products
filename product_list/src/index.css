@@ -30,7 +30,7 @@
 
 .product-card button {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
     border-radius: 20px;
