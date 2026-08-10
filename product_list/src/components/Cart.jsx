@@ -6,7 +6,7 @@ export default function Cart({ cart, removeItem }) {
     return sum + item.quantity;
   }, 0);
 
-  const total = cart.reduce((sum, item) => {
+  const orderTotal = cart.reduce((sum, item) => {
     return sum + item.quantity * item.product.price;
   }, 0);
 
@@ -21,7 +21,12 @@ export default function Cart({ cart, removeItem }) {
             ))}
           </div>
         )}
-      <p>Total: {total}</p>
+      <p className='flex justify-between'>Order Total: <strong>${orderTotal.toFixed(2)}</strong> </p>
+      <div className='carbon-neutral'>
+        <img src="icon-carbon-neutral.svg" alt="carbon" />
+        <p>This is a <strong>carbon-neutral</strong> delivery</p>
+      </div>
+      <button className='confirm-btn'>Confirm Order</button>
     </aside>
   )
 }
