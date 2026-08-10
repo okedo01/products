@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Cart() {
   return (
-    <div className='cart'>Cart</div>
+    <aside className='cart'>Your Cart(0)</aside>
   )
 }

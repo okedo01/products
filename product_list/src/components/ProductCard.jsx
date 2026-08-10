@@ -12,7 +12,7 @@ export default function ProductCard({ product, addToCart, cart, increaseQuantity
             <p>${product.price.toFixed(2)}</p>
             <div >
                 {clickedItem ? (
-                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border rounded-full px-5 py-2">
+                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-red-800 text-white border rounded-full px-5 py-2">
                         <button onClick={() => decreaseQuantity(product)}>-</button>
                         <span>({clickedItem.quantity})</span>
                         <button onClick={() => increaseQuantity(product)}>+</button>

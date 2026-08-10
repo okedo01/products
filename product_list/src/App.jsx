@@ -1,3 +1,4 @@
+import Cart from './components/Cart';
 import ProductList from './components/ProductList';
 import { useEffect, useState } from 'react';
 
@@ -63,6 +64,7 @@ export default function App() {
   return (
     <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
+      <Cart />
     </div>
   )
 }
