@@ -1,13 +1,9 @@
 import React from 'react'
 import CartItem from './CartItem';
 
-export default function Cart({ cart, removeItem }) {
+export default function Cart({ cart, removeItem, orderTotal }) {
   const totalQuantity = cart.reduce((sum, item) => {
     return sum + item.quantity;
-  }, 0);
-
-  const orderTotal = cart.reduce((sum, item) => {
-    return sum + item.quantity * item.product.price;
   }, 0);
 
   return (

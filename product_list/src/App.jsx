@@ -1,10 +1,12 @@
 import Cart from './components/Cart';
+import OrderConfirmation from './components/OrderConfirmation';
 import ProductList from './components/ProductList';
 import { useEffect, useState } from 'react';
 
 export default function App() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
 
   useEffect(() => {
     fetch("/data.json")
@@ -68,10 +70,20 @@ export default function App() {
     setCart(filteredItem);
   }
 
+  const orderTotal = cart.reduce((sum, item) => {
+    return sum + item.quantity * item.product.price;
+  }, 0);
+
+  const startNewOrder = () => {
+    console.log("confirmed");
+    
+  }
+
   return (
     <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
-      <Cart cart={cart} removeItem={removeItem} />
+      <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} />
+      <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
     </div>
   )
 }
