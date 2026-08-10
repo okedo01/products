@@ -61,10 +61,17 @@ export default function App() {
     }
   }
 
+  const removeItem = (product) => {
+    const filteredItem = cart.filter(item => {
+      return item.product.name !== product.name;
+    })
+    setCart(filteredItem);
+  }
+
   return (
     <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
-      <Cart cart={cart} />
+      <Cart cart={cart} removeItem={removeItem} />
     </div>
   )
 }

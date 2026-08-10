@@ -46,3 +46,15 @@
 .card {
     width: 300px;
 }
+.items-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-btn {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 10%;
+    height: 2%;
+    cursor: pointer;
+}
