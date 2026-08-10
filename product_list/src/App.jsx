@@ -64,7 +64,7 @@ export default function App() {
   return (
     <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
-      <Cart />
+      <Cart cart={cart} />
     </div>
   )
 }
