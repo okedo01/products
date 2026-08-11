@@ -44,22 +44,22 @@ export default function App() {
 
   const decreaseQuantity = (product) => {
     const clickedItem = cart.find(item => item.product.name === product.name)
-    
-    if(clickedItem.quantity > 1) {
-      const updatedCart = cart.map(item => 
-        item.product.name === product.name ? 
-        {...item, quantity: item.quantity - 1} :
-        item
+
+    if (clickedItem.quantity > 1) {
+      const updatedCart = cart.map(item =>
+        item.product.name === product.name ?
+          { ...item, quantity: item.quantity - 1 } :
+          item
       )
       setCart(updatedCart);
     } else {
-      if(clickedItem.quantity === 1) {
-        const filteredItem = cart.filter(item => 
+      if (clickedItem.quantity === 1) {
+        const filteredItem = cart.filter(item =>
           item.product.name !== product.name
         )
         setCart(filteredItem);
       }
-      
+
     }
   }
 
@@ -74,16 +74,24 @@ export default function App() {
     return sum + item.quantity * item.product.price;
   }, 0);
 
+  const orderConfirmed = () => {
+    setIsOrderConfirmed(true);
+  }
+
   const startNewOrder = () => {
-    console.log("confirmed");
-    
+    setCart([]);
+    setIsOrderConfirmed(false);
   }
 
   return (
     <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
-      <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} />
-      <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
+      <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} orderConfirmed={orderConfirmed} />
+      {
+        isOrderConfirmed && (
+          <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
+        )
+      }
     </div>
   )
 }
