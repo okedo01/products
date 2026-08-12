@@ -8,7 +8,7 @@ export default function CartItem({ item, removeItem }) {
     <div>
       <h2 className='text-gray-600'>{item.product.name}</h2>
       <div className='flex justify-between items-center'>
-        <div className='items-wrapper'>
+        <div className='items-wrapper text-gray-500'>
           <p>{item.quantity}<span className='text-red-400'>x</span></p>
           
           <p>${item.product.price.toFixed(2)}</p>

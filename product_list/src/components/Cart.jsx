@@ -22,10 +22,10 @@ export default function Cart({ cart, removeItem, orderTotal, orderConfirmed }) {
                 <CartItem key={item.product.name} item={item} removeItem={removeItem} />
               ))}
             </div>
-            <p className='flex justify-between'>Order Total: <strong>${orderTotal.toFixed(2)}</strong> </p>
+            <p className='flex justify-between text-gray-500'>Order Total: <strong>${orderTotal.toFixed(2)}</strong> </p>
             <div className='carbon-neutral'>
               <img src={carbonNeutral} />
-              <p className='text-gray-600'>This is a <strong>carbon-neutral</strong> delivery</p>
+              <p className='text-gray-500'>This is a <strong>carbon-neutral</strong> delivery</p>
             </div>
             <button onClick={() => orderConfirmed()} className='confirm-btn'>Confirm Order</button>
           </div>

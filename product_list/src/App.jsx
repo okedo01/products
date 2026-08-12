@@ -63,16 +63,16 @@ export default function App() {
     }
   }
 
+  const orderTotal = cart.reduce((sum, item) => {
+    return sum + item.quantity * item.product.price;
+  }, 0);
+
   const removeItem = (product) => {
     const filteredItem = cart.filter(item => {
       return item.product.name !== product.name;
     })
     setCart(filteredItem);
   }
-
-  const orderTotal = cart.reduce((sum, item) => {
-    return sum + item.quantity * item.product.price;
-  }, 0);
 
   const orderConfirmed = () => {
     setIsOrderConfirmed(true);
