@@ -35,8 +35,8 @@ export default function OrderConfirmation({
   startNewOrder
 }) {
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
-      <div className="bg-white rounded-xl p-6 w-[90%] max-w-lg">
+    <div className="fixed inset-0 z-5 bg-black/30 flex items-center justify-center">
+      <div className="order-confirmed">
 
         <h1 className="text-2xl font-bold">
           Order Confirmed
@@ -46,7 +46,7 @@ export default function OrderConfirmation({
           We hope you enjoy your food!
         </p>
 
-        <div className="bg-gray-100 rounded-lg p-4 mt-5">
+        <div className="confirm-wrapper bg-gray-100">
           {cart.map(item => (
             <div
               key={item.product.name}
@@ -76,7 +76,7 @@ export default function OrderConfirmation({
 
         <button
           onClick={startNewOrder}
-          className="w-full bg-red-600 text-white py-3 rounded-full mt-5 cursor-pointer"
+          className="confirm-btn bg-red-600"
         >
           Start New Order
         </button>
