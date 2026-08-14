@@ -3,15 +3,18 @@ export default function OrderConfirmation({
   orderTotal,
   startNewOrder
 }) {
+  import checkedIcon from "../icons-and-images/icons8-checkes(1).svg";
+  
   return (
     <div className="fixed inset-0 z-5 bg-black/30 flex items-center justify-center">
+      <img src={checkedIcon} alt={checkedIcon} />
       <div className="order-confirmed">
 
-        <h1 className="text-2xl text-gray-600 font-bold">
+        <h1 className="text-xl text-gray-600 font-bold">
           Order Confirmed
         </h1>
 
-        <p className="text-gray-500 mt-2">
+        <p className="text-gray-500 text-sm">
           We hope you enjoy your food!
         </p>
 

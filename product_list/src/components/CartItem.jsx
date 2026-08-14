@@ -5,7 +5,7 @@ export default function CartItem({ item, removeItem }) {
   const totalItem = item.quantity * item.product.price;
 
   return (
-    <div>
+    <div className='border-gray-300 border-b'>
       <h2 className='text-gray-600'>{item.product.name}</h2>
       <div className='flex justify-between items-center'>
         <div className='items-wrapper text-gray-500'>

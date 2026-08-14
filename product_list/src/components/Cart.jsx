@@ -9,12 +9,12 @@ export default function Cart({ cart, removeItem, orderTotal, orderConfirmed }) {
   }, 0);
 
   return (
-    <aside className='cart'>
+    <aside className='cart bg-white'>
       <p className='text-red-500 text-lg font-bold'>Your Cart({totalQuantity})</p>
       {cart.length === 0 ?
-        (<div>
+        (<div className='empty-cart'>
           <img src={emptyCart} />
-          <p>Your added items will appear here</p>
+          <p className='text-gray-500'>Your added items will appear here</p>
         </div>) : (
           <div>
             <div>

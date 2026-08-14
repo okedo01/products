@@ -84,7 +84,9 @@ export default function App() {
   }
 
   return (
-    <div className='wrapper'>
+    <div>
+      <h1 className='desserts text-gray-500 font-bold'>Desserts</h1>
+      <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
       <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} orderConfirmed={orderConfirmed} />
       {
@@ -92,6 +94,7 @@ export default function App() {
           <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
         )
       }
+    </div>
     </div>
   )
 }

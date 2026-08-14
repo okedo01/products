@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 @import "tailwindcss";
 
 * {
@@ -5,21 +6,24 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: "Red Hat Mono", ;
+}
 
+.desserts {
+    margin-left: 60px;
+    font-size: 24px;
+}
 .wrapper {
-    display: flex;
-    gap: 25px;
-    padding: 30px 40px;
-}
-
-.product-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 1fr;
     gap: 20px;
+    padding: 15px 40px;
 }
-
-.product-card {
-    width: 250px;
+@media screen and (max-width: 770px) {
+    .wrapper {
+    display: block;
+}
 }
 
 .product-card .product-image {
@@ -35,9 +39,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 7px 15px;
     border-radius: 20px;
     cursor: pointer;
+}
+@media screen and(max-width: 770px) {
+    .product-card button {
+    width: fit-content;
+}
 }
 
 .product-card button img {
@@ -47,9 +56,15 @@
 }
 
 .cart {
-    width: 100%;
-    height: 100vh;
+    /* max-width: 350px;
+    width: 100%; */
     padding: 10px 20px;
+}
+.cart .empty-cart img {
+    margin: 0 auto;
+}
+.cart .empty-cart p {
+    text-align: center;
 }
 .cart .carbon-neutral {
     display: flex;
@@ -87,9 +102,25 @@
 .order-confirmed {
     max-width: 350px;
     width: 100%;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     background-color: white;
+    animation: modalIn 0.4s ease-out 1s both;
+}
+.order-confirmed {
+  animation: modalIn 0.4s ease-out 0.5s both;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 .order-confirmed-items .container {
     display: grid;
