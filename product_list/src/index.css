@@ -122,6 +122,9 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+.order-confirmed .hope{
+    padding-bottom: 7px;
+}
 .order-confirmed-items .container {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;

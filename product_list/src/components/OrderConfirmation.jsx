@@ -1,20 +1,21 @@
+import checkedIcon from "../icons-and-images/icon-checked.svg";
+
 export default function OrderConfirmation({
   cart,
   orderTotal,
   startNewOrder
 }) {
-  import checkedIcon from "../icons-and-images/icons8-checkes(1).svg";
-  
+
   return (
     <div className="fixed inset-0 z-5 bg-black/30 flex items-center justify-center">
-      <img src={checkedIcon} alt={checkedIcon} />
-      <div className="order-confirmed">
 
+      <div className="order-confirmed">
+        <img src={checkedIcon} className="checked" />
         <h1 className="text-xl text-gray-600 font-bold">
           Order Confirmed
         </h1>
 
-        <p className="text-gray-500 text-sm">
+        <p className="hope text-gray-500 text-sm">
           We hope you enjoy your food!
         </p>
 
@@ -35,7 +36,7 @@ export default function OrderConfirmation({
                   <div className='confirm-items-wrapper'>
                     <p>{item.quantity}<span className='text-red-400'>x</span></p>
 
-                  <p><span className="text-xs">@</span>${item.product.price.toFixed(2)}</p>
+                    <p><span className="text-xs">@</span>${item.product.price.toFixed(2)}</p>
                   </div>
 
                 </div>
