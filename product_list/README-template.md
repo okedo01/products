@@ -4,25 +4,6 @@ This is my solution to the [Product list with cart challenge on Frontend Mentor]
 
 I built this project using React to practice component-based development, state management, array methods, conditional rendering, responsive layouts, and handling user interactions in a real-world shopping cart interface.
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-## Overview
-
-### The challenge
-
 Users should be able to:
 
 - Add products to the cart
@@ -38,11 +19,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop-design-empty](./src/Screenshots/empty%20screenshot.png)
+![active-states](./src/Screenshots/active%20screenshot.png)
+![desktop-design-order-confirmation](./src/Screenshots/orderconfirmed.png)
+![mobile-design-empty](./src/Screenshots/mobile%20active.png)
+![mobile-design-selected](./src/Screenshots/mobile%20screenshot.png)
 
 ### Links
 
-- Solution URL: [Add your Frontend Mentor solution URL here](https://www.frontendmentor.io/)
+- Solution URL: [Frontend Mentor solution URL](https://github.com/okedo01/products)
 - Live Site URL: [Add your live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -53,6 +38,7 @@ Users should be able to:
 - CSS
 - Flexbox
 - CSS Grid
+- TailwindCSS
 - Responsive design
 - Mobile-first approach
 - JavaScript
@@ -69,8 +55,3 @@ Users should be able to:
 This project helped me understand how to build a real interactive application using React rather than simply creating a static interface.
 
 One of the main things I learned was how to keep shared state in the appropriate parent component. The cart state lives in `App` because both the product components and the cart need access to the same data.
-
-For example:
-
-```jsx
-const [cart, setCart] = useState([]);
