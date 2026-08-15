@@ -61,7 +61,6 @@ body {
     cursor: pointer;
 }
 @media screen and (max-width: 770px) {
-    .add-to-cart,
     .quantity-control {
         width: 160px;
     }
