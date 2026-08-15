@@ -12,13 +12,13 @@ export default function ProductCard({ product, addToCart, cart, increaseQuantity
             <p className='text-red-500 text-xs font-bold'>${product.price.toFixed(2)}</p>
             <div>
                 {clickedItem ? (
-                    <div className="absolute bottom-13.5 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-red-800 text-white border rounded-full px-5 py-2">
-                        <button onClick={() => decreaseQuantity(product)}>-</button>
+                    <div className="quantity-control absolute bottom-13.5 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-red-800 text-white border rounded-full px-5 py-2">
+                        <button className='quantity-btn' onClick={() => decreaseQuantity(product)}>-</button>
                         <span>({clickedItem.quantity})</span>
-                        <button onClick={() => increaseQuantity(product)}>+</button>
+                        <button className='quantity-btn' onClick={() => increaseQuantity(product)}>+</button>
                     </div>
                 ) : (
-                    <button onClick={() => addToCart(product)} className="absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border-gray-400 border rounded-full px-5">
+                    <button onClick={() => addToCart(product)} className="add-to-cart absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border-gray-400 border rounded-full px-5">
                         <img src={cartIcon} alt="Cart" />
                         <span className='text-xs'>Add to Cart</span>
                     </button>

@@ -61,9 +61,18 @@ body {
     cursor: pointer;
 }
 @media screen and (max-width: 770px) {
-    .product-card button {
-    width: fit-content;
-}
+    .add-to-cart,
+    .quantity-control {
+        width: 160px;
+    }
+
+    .add-to-cart {
+        justify-content: center;
+    }
+
+    .quantity-control {
+        justify-content: space-between;
+    }
 }
 
 .product-card button img {
