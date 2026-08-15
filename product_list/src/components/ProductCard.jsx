@@ -18,7 +18,7 @@ export default function ProductCard({ product, addToCart, cart, increaseQuantity
                         <button className='quantity-btn' onClick={() => increaseQuantity(product)}>+</button>
                     </div>
                 ) : (
-                    <button onClick={() => addToCart(product)} className="add-to-cart absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border-gray-400 border rounded-full px-5">
+                    <button onClick={() => addToCart(product)} className="add-to-cart absolute bottom-14 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white border-gray-400 border rounded-full">
                         <img src={cartIcon} alt="Cart" />
                         <span className='text-xs'>Add to Cart</span>
                     </button>
