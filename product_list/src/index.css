@@ -65,10 +65,6 @@ body {
         width: 160px;
     }
 
-    .add-to-cart {
-        /* justify-content: center; */
-    }
-
     .quantity-control {
         justify-content: space-between;
     }
