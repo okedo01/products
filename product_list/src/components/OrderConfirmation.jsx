@@ -19,7 +19,7 @@ export default function OrderConfirmation({
           We hope you enjoy your food!
         </p>
 
-        <div className="order-confirmed-items bg-gray-100">
+        <div className="order-confirmed-items bg-pink-50">
           {cart.map(item => (
             <div
               key={item.product.name}
@@ -29,8 +29,8 @@ export default function OrderConfirmation({
               <div className="container">
                 <img src={item.product.image.desktop} />
 
-                <div className="text-gray-600 text-sm">
-                  <p>
+                <div className="text-gray-500 text-xs">
+                  <p className="text-gray-600">
                     {item.product.name}
                   </p>
                   <div className='confirm-items-wrapper'>
@@ -40,7 +40,7 @@ export default function OrderConfirmation({
                   </div>
 
                 </div>
-                <strong className="text-sm text-gray-500">
+                <strong className="total-price-item text-gray-500">
                   ${(item.quantity * item.product.price).toFixed(2)}
                 </strong>
               </div>
@@ -49,7 +49,7 @@ export default function OrderConfirmation({
             </div>
           ))}
 
-          <div className="flex justify-between text-xs text-gray-500 border-t-gray-300">
+          <div className="total-price flex justify-between text-xs text-gray-500 border-t-gray-300">
             <span>Order Total</span>
             <strong>${orderTotal.toFixed(2)}</strong>
           </div>

@@ -84,7 +84,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className='bg-pink-50'>
       <h1 className='desserts text-gray-500 font-bold'>Desserts</h1>
       <div className='wrapper'>
       <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />

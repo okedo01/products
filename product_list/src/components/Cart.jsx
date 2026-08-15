@@ -14,7 +14,7 @@ export default function Cart({ cart, removeItem, orderTotal, orderConfirmed }) {
       {cart.length === 0 ?
         (<div className='empty-cart'>
           <img src={emptyCart} />
-          <p className='text-gray-500'>Your added items will appear here</p>
+          <p className='text-gray-500 text-sm'>Your added items will appear here</p>
         </div>) : (
           <div>
             <div>
