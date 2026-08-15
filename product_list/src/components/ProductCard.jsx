@@ -6,7 +6,18 @@ export default function ProductCard({ product, addToCart, cart, increaseQuantity
 
     return (
         <div className='product-card relative'>
-            <img src={product.image.desktop} alt={product.name} className={`product-image ${clickedItem ? "selected" : ""}`} />
+            <picture>
+                <source
+                    media="(max-width: 767px)"
+                    srcSet={product.image.mobile}
+                />
+
+                <img
+                    src={product.image.desktop}
+                    alt={product.name}
+                    className={`product-image ${clickedItem ? "selected" : ""}`}
+                />
+            </picture>
             <p className='text-gray-500 text-xs'>{product.category}</p>
             <h2 className='text-xs'>{product.name}</h2>
             <p className='text-red-500 text-xs font-bold'>${product.price.toFixed(2)}</p>
