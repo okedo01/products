@@ -103,7 +103,7 @@ export default function App() {
           rel="noopener noreferrer"
           className="font-semibold text-gray-700 hover:text-pink-600 hover:underline transition-colors"
         >
-          Okedo
+          Eliah
         </a>
       </footer>
     </div>
