@@ -87,14 +87,25 @@ export default function App() {
     <div className='bg-pink-50'>
       <h1 className='desserts text-gray-500 font-bold'>Desserts</h1>
       <div className='wrapper'>
-      <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
-      <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} orderConfirmed={orderConfirmed} />
-      {
-        isOrderConfirmed && (
-          <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
-        )
-      }
-    </div>
+        <ProductList products={products} addToCart={addToCart} cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
+        <Cart cart={cart} removeItem={removeItem} orderTotal={orderTotal} orderConfirmed={orderConfirmed} />
+        {
+          isOrderConfirmed && (
+            <OrderConfirmation cart={cart} orderTotal={orderTotal} startNewOrder={startNewOrder} />
+          )
+        }
+      </div>
+      <footer className="mt-12 py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Developed by{" "}
+        <a
+          href="https://github.com/okedo01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-gray-700 hover:text-pink-600 hover:underline transition-colors"
+        >
+          Okedo
+        </a>
+      </footer>
     </div>
   )
 }
